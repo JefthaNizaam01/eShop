@@ -6,10 +6,10 @@ let connection = createPool ({
     password: process.env.pwdDb,
     database: process.env.dbName,
     multipleStatements: true,
-    connectionLimit: 30
+    connectionLimit: 30,
 })
 connection.on('connection', (err) => {
-    if(err) throw new Error('Couldn\'t connect to the database, please try again later')
+    if(!pool) throw new Error('Couldn\'t connect to the database, please try again later')
 })
 export {
     connection
