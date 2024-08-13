@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'path'
 import { connection as db } from './config/index.js'
 import { createToken } from './middleware/AuthenticateUser.js'
-import { hash } from "bcrypt"
+import { compare, hash } from "bcrypt"
 import bodyParser from 'body-parser'
 
 // create an express app
