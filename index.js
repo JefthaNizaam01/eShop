@@ -25,7 +25,7 @@ router.get('/users', (req, res) => {
     try {
         const strQry = `
         SELECT firstName, lastName, age,
-        emailAdd
+        emailAdd, userRole, ProfileURL
         FROM Users
         ` //WHERE userID = 1;
         db.query(strQry, (err, results) => {
@@ -76,7 +76,7 @@ router.get('/users/:id', (req, res) => {
     try {
         const strQry = `
         SELECT firstName, lastName, age,
-        emailAdd
+        emailAdd, userRole, ProfileURL
         FROM Users
         WHERE userID = ${req.params.id}
         `
@@ -146,7 +146,7 @@ router.post('/login', (req, res) => {
     try {
         const { emailAdd, pwd} = req.body
         const strQry = `
-        SELECT userID, firstName, lastName, age, emailAdd, pwd
+        SELECT userID, firstName, lastName, age, emailAdd, pwd, userRole, ProfileURL
         FROM Users
         WHERE emailAdd = '${emailAdd}';
         `
