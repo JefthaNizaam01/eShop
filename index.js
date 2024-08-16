@@ -42,6 +42,30 @@ router.get('/users', (req, res) => {
         })
     }
 })
+
+
+router.get('/products', (req, res) => {
+    try {
+        const strQry = `
+        SELECT productName, productDescription, price, stock, category
+            FROM Products
+        ` 
+        db.query(strQry, (err, results) => {
+            if (err) throw new Error(`Unable to fetch all Products`)
+            res.json({
+                status: res.statusCode,
+                results
+            })
+        })
+    } catch (e) {
+        res.json({
+            status: 404,
+            msg: e.message
+        })
+    }
+})
+
+
 router.post('/register', async (req, res) => {
     try {
         let data = req.body
@@ -72,6 +96,9 @@ router.post('/register', async (req, res) => {
     } catch (e) {
     }
 })
+
+
+
 router.get('/users/:id', (req, res) => {
     try {
         const strQry = `
