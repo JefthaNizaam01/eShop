@@ -6,9 +6,9 @@ import path from 'path'
 // Create an express app
 const app = express()
 const port = +process.env.PORT || 4000
-const router = express.Router()
+
 // Middleware
-app.use(router,
+app.use(
     ('/user', userRouter),
     ('/product', productRouter),
     express.static('./static'),
@@ -17,11 +17,11 @@ app.use(router,
         extended: true
     }))
 
-router.get('^/$|/eShop', (req, res) => {
+app.get('^/$|/eShop', (req, res) => {
     res.status(200).sendFile(path.resolve('./static/html/index.html'))
 })
 
-router.get('*', (req, res) => {
+app.get('*', (req, res) => {
     res.json({
         status: 404,
         msg: 'Resource not found'
