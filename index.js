@@ -1,4 +1,3 @@
-
 import { userRouter, express } from './controller/UserController.js'
 import { productRouter } from './controller/ProductController.js'
 import path from 'path'
@@ -6,22 +5,22 @@ import path from 'path'
 // Create an express app
 const app = express()
 const port = +process.env.PORT || 4000
-
+const router = express.Router()
 // Middleware
-app.use(
-    ('/user', userRouter),
-    ('/product', productRouter),
+app.use(router,
+    '/user', userRouter,
+    '/product', productRouter,
     express.static('./static'),
     express.json(),
     express.urlencoded({
         extended: true
     }))
 
-app.get('^/$|/eShop', (req, res) => {
+router.get('^/$|/eShop', (req, res) => {
     res.status(200).sendFile(path.resolve('./static/html/index.html'))
 })
 
-app.get('*', (req, res) => {
+router.get('*', (req, res) => {
     res.json({
         status: 404,
         msg: 'Resource not found'
