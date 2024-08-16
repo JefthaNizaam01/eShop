@@ -9,8 +9,8 @@ const port = +process.env.PORT || 4000
 const router = express.Router()
 // Middleware
 app.use(router,
-    '/user', userRouter,
-    '/product', productRouter,
+    ('/user', userRouter),
+    ('/product', productRouter),
     express.static('./static'),
     express.json(),
     express.urlencoded({
