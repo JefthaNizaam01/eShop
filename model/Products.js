@@ -106,7 +106,7 @@ class Products {
         } catch (e) { 
             res.json({
                 status: 404,
-                msg: e.message
+                err: e.message
             })
         }
     }
@@ -121,7 +121,7 @@ class Products {
                 if (err) throw new Error('Unable to delete a product')
                 res.json({
                     status: res.statusCode,
-                    msg: 'A product was removed.'
+                    err: 'A product was removed.'
                 })
             })
         } catch (e) { 
