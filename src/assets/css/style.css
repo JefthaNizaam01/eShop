@@ -1,0 +1,45 @@
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+/* APP */
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+}
+
+nav {
+    padding: 30px;
+}
+
+nav a {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+    color: #42b983;
+}
+
+/* Logo */
+img[alt='logo']{
+    width: 5rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-rows: auto minmax(100dvh, 100%) auto;
+}
