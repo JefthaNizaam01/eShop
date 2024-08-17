@@ -1,14 +1,15 @@
-
 *,
 *::after,
-*::before{
+*::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
     display: none;
 }
+
 /* APP */
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -31,15 +32,21 @@ nav a.router-link-exact-active {
     color: #42b983;
 }
 
+body {
+    scroll-behavior: smooth;
+}
+
 /* Logo */
-img[alt='logo']{
+img[alt='logo'] {
     width: 5rem;
     aspect-ratio: 1;
     object-fit: cover;
     object-position: center;
 }
 
-.wrapper{
+.wrapper {
     display: grid;
     grid-template-rows: auto minmax(100dvh, 100%) auto;
 }
+
+/* Recent products */

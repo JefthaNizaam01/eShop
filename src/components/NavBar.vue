@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <router-link class="navbar-brand" to="/">
-                <img src="https://codjoelmayer.github.io/projectImages/images/logo.png" loading="lazy" alt="logo">
+                <img src="https://jefthanizaam01.github.io/favoriteimages/images/NJJ.png" loading="lazy" alt="logo">
             </router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
